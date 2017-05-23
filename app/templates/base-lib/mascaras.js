@@ -1,5 +1,5 @@
-import dom from './dom';
-import vanillaMasker from '../vendor/vanilla-masker';
+import dom from 'dom';
+import vanillaMasker from 'vanilla-masker';
 
 const _mascaras = {
   'data': '99/99/9999'

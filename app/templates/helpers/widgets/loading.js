@@ -1,5 +1,5 @@
 import dom from '~/base-lib/dom';
-import template from 'html!./loading.template.html';
+import template from './loading.template.html';
 
 export default class Loading {
   static exibir(seletorParaExibicao) {
