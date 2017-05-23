@@ -9,7 +9,6 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "gulp": "^3.9.1",
     "yeoman-generator": "^1.0.0"
   }
 }
