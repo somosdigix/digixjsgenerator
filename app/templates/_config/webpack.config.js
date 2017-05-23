@@ -1,6 +1,8 @@
+const path = require('path');
+
 const fontPath = '';
 const fontLoaderQuery = { 
-  publicPath: __dirname + '/dist/fonts',
+  publicPath: path.join(__dirname, '../dist/fonts'),
   name: '[hash].[ext]'
 };
 
@@ -10,7 +12,7 @@ const configuration = {
   entry: './bootstrap.js',
 
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '../dist'),
     filename: '[name].dist.js'
   },
 
@@ -21,7 +23,6 @@ const configuration = {
       { test: /\.(svg|eot|ttf|otf|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'file-loader', query: fontLoaderQuery }
     ]    
   }
-  
 };
 
 module.exports = configuration;
