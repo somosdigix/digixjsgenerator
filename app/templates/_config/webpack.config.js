@@ -1,3 +1,4 @@
+const glob = require('glob');
 const path = require('path');
 
 const fontLoaderQuery = { 
@@ -8,7 +9,7 @@ const fontLoaderQuery = {
 const configuration = {
   cache: true,
 
-  entry: './bootstrap.js',
+  entry: createEntries(),
 
   output: {
     path: path.join(__dirname, '../dist'),
@@ -37,5 +38,25 @@ const configuration = {
     ]    
   }
 };
+
+function createEntries() {
+  return {
+    bootstrap: './bootstrap.js',
+    controllers: findFiles('**/*.controller.js'),
+    tests: findFiles('**/*.test.js')
+  };
+}
+
+function findFiles(pattern) {
+  const fileSearchOptions = {
+    cwd: './',
+    ignore: [
+      '**/node_modules/**',
+      '_config/**'
+    ]
+  };
+
+  return glob.sync(pattern, fileSearchOptions).map((file) => `./${file}`);
+}
 
 module.exports = configuration;

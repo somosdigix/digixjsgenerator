@@ -7,7 +7,7 @@
   ],
   "main": "bootstrap.js",
   "scripts": {
-    "build": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js",
+    "build": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Digix",
@@ -16,8 +16,14 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "css-loader": "^0.28.2",
+    "del": "^2.2.2",
     "file-loader": "^0.11.1",
     "font-awesome": "^4.7.0",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-watch": "^4.3.11",
     "html-loader": "^0.4.5",
     "node-sass": "^4.5.2",
     "reqwest": "^2.0.5",
