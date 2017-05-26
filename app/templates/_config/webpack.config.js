@@ -42,8 +42,7 @@ const configuration = {
 function createEntries() {
   return {
     bootstrap: './bootstrap.js',
-    controllers: findFiles('**/*.controller.js'),
-    tests: findFiles('**/*.test.js')
+    controllers: findFiles('**/*.controller.js')
   };
 }
 
