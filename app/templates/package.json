@@ -18,7 +18,8 @@
       "./controllers/**/*.js"
     ],
     "require": [
-      "./test/helpers/setup-browser-env.js"
+      "./test/helpers/setup-browser-env.js",
+      "babel-core/register"
     ],
     "babel": "inherit"
   },
@@ -28,6 +29,7 @@
     "ava": "^0.19.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "browser-env": "^2.0.31",
     "css-loader": "^0.28.2",
     "del": "^2.2.2",

@@ -1,5 +1,5 @@
-const test = require('ava');
-const Feed = require('../../controllers/exemplo/feed/feed.module');
+import test from 'ava';
+import Feed from '../../controllers/exemplo/feed/feed.module';
 
 let _feed;
 

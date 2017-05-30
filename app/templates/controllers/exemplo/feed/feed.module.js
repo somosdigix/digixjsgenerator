@@ -1,4 +1,4 @@
-class Feed {
+export default class Feed {
   constructor(sandbox) {
     this.sandbox = sandbox;
   }
@@ -11,5 +11,3 @@ class Feed {
     document.querySelector('span').innerHTML = '';
   }
 }
-
-module.exports = Feed;
