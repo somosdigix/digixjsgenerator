@@ -1,4 +1,4 @@
-import test from 'ava';
+const test = require('ava');
 
 test('Passando', t => {
   t.pass();
