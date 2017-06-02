@@ -10,10 +10,10 @@ export default class Feed {
   }
 
   iniciar() {
-    this.el.innerHTML = template;
+    this.el.append(template);
   }
 
   finalizar() {
-    this.el.innerHTML = '';
+    this.el.empty();
   }
 }

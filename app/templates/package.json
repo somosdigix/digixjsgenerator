@@ -7,29 +7,23 @@
   ],
   "main": "bootstrap.js",
   "scripts": {
-    "build": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules || true",
-    "test": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js || true"
-  },
-  "ava": {
-    "files": [
-      "./dist/**/tests.dist.js"
-    ],
-    "source": [
-      "./test/**/*.test.js"
-    ],
-    "require": [
-      "./test/helpers/setup-browser-env.js",
-      "babel-core/register"
-    ],
-    "babel": "inherit"
+    "webpack": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules",
+    "mocha": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js --reporter landing",
+
+    "build": "npm run webpack || true",
+    "build:watch": "npm run webpack -- --watch || true",
+
+    "test": "npm run mocha || true",
+    "test:watch": "npm run mocha -- --reporter min --watch || true",
+
+    "build:test": "npm run build && npm run test",
+    "build:test:watch": "npm run build:watch | npm run test:watch"
   },
   "author": "Digix",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.19.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "browser-env": "^2.0.31",
     "css-loader": "^0.28.2",
     "del": "^2.2.2",
@@ -37,7 +31,6 @@
     "font-awesome": "^4.7.0",
     "glob": "^7.1.2",
     "html-loader": "^0.4.5",
-    "jest": "^20.0.4",
     "knockout": "^3.4.2",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.2",
