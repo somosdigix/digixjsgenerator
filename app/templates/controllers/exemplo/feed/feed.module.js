@@ -1,13 +1,19 @@
+import ko from 'knockout';
+import template from './feed.template.html';
+
 export default class Feed {
   constructor(sandbox) {
+    this.el = sandbox.dom('div[data-js="feed"]');
     this.sandbox = sandbox;
+
+    this.postagens = ko.observableArray([]);
   }
 
   iniciar() {
-    document.querySelector('span').innerHTML = 'Oi';
+    this.el.innerHTML = template;
   }
 
   finalizar() {
-    document.querySelector('span').innerHTML = '';
+    this.el.innerHTML = '';
   }
 }

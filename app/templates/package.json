@@ -8,14 +8,14 @@
   "main": "bootstrap.js",
   "scripts": {
     "build": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules || true",
-    "test": "node node_modules/ava/cli.js || true"
+    "test": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js || true"
   },
   "ava": {
     "files": [
-      "./test/**/*.test.js"
+      "./dist/**/tests.dist.js"
     ],
     "source": [
-      "./controllers/**/*.js"
+      "./test/**/*.test.js"
     ],
     "require": [
       "./test/helpers/setup-browser-env.js",
@@ -37,6 +37,9 @@
     "font-awesome": "^4.7.0",
     "glob": "^7.1.2",
     "html-loader": "^0.4.5",
+    "jest": "^20.0.4",
+    "knockout": "^3.4.2",
+    "mocha": "^3.4.2",
     "node-sass": "^4.5.2",
     "reqwest": "^2.0.5",
     "sass-loader": "^6.0.5",

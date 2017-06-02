@@ -1,17 +1,18 @@
-import test from 'ava';
-import Feed from '../../controllers/exemplo/feed/feed.module';
+import assert from 'assert';
+
+import Sandbox from '~/base/sandbox';
+import dom from '~/base-lib/dom';
+import Feed from '~/controllers/exemplo/feed/feed.module';
 
 let _feed;
 
-test.beforeEach(t => {
-  _feed = new Feed();
-  document.body.innerHTML = '<span></span>';
-});
+describe('Feed', () => {
+  it('Deve listagem todas as postagens', () => {
+    _feed = new Feed(new Sandbox());
+    document.body.innerHTML = '<div data-js="feed"></div>';
 
-test('Passando', t => {
-  const span = document.querySelector('span');
+    _feed.iniciar();
 
-  _feed.iniciar();
-  
-  t.is(span.innerHTML, 'Oi');
+    assert.equal(dom('div[data-js="feed"] section').length, 1);
+  });
 });
