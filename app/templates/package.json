@@ -9,15 +9,10 @@
   "scripts": {
     "webpack": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules",
     "mocha": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js --reporter landing",
-
-    "build": "npm run webpack || true",
-    "build:watch": "npm run webpack -- --watch || true",
-
-    "test": "npm run mocha || true",
-    "test:watch": "npm run mocha -- --reporter min --watch || true",
-
-    "build:test": "npm run build && npm run test",
-    "build:test:watch": "npm run build:watch | npm run test:watch"
+    "build": "npm run -s webpack || true",
+    "build:watch": "npm run -s webpack -- --watch || true",
+    "test": "npm run -s mocha || true",
+    "test:watch": "npm run -s mocha -- --reporter min --watch || true"
   },
   "author": "Digix",
   "license": "ISC",
@@ -37,6 +32,7 @@
     "reqwest": "^2.0.5",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.0",
+    "testdouble": "^2.1.2",
     "url-loader": "^0.5.8",
     "vanilla-masker": "^1.1.1",
     "webpack": "^2.5.1"

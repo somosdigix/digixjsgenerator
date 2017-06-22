@@ -1,5 +1,5 @@
 <section data-bind="foreach: postagens">
-  <div>
+  <div data-bind="attr: { 'data-id': id }">
     <span data-bind="text: nome"></span>
     <p data-bind="text: mensagem"></p>
   </div>
