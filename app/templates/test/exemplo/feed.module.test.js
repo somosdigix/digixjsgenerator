@@ -1,5 +1,4 @@
-import assert from 'assert';
-import td from 'testdouble';
+import expect from 'expect.js';
 
 import FakePromise from '../helpers/fakePromise';
 import Sandbox from '~/base/sandbox';
@@ -19,7 +18,7 @@ describe('Feed', () => {
   it('deve iniciar com o básico do seu template', () => {
     _feed.iniciar();
 
-    assert.ok(dom('div[data-js="feed"] section').any());
+    expect(dom('div[data-js="feed"] section').any()).to.be.ok();
   });
 
   it('deve listar as postagens', () => {
@@ -39,7 +38,7 @@ describe('Feed', () => {
 
     _feed.iniciar();
 
-    assert.ok(dom('div[data-id="1"]').any());
-    assert.ok(dom('div[data-id="2"]').any());
+    expect(dom('div[data-id="1"]').any()).to.be.ok();
+    expect(dom('div[data-id="2"]').any()).to.be.ok();
   });
 });
