@@ -2,8 +2,7 @@ import http from '../../base-lib/http';
 
 export default class FeedApi {
   static obterTodos() {
-    return new Promise((resolve) => {
-      resolve();
-    });
+    // Fake, não será implementado
+    return new Promise((resolve) => resolve());
   }
 }

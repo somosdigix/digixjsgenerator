@@ -1,7 +1,4 @@
 ﻿import './sass/estilos.scss';
+import ExemploController from './controllers/exemplo/exemplo.controller';
 
-/*
-ToDo:
-- Criar infra de testes de unidade
-- Já configurar os plugins de performance do webpack
-*/
+new ExemploController().iniciar();

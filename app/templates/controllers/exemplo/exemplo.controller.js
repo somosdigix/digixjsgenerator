@@ -2,17 +2,17 @@ import Sandbox from 'sandbox';
 import ControllerBase from 'controllerBase';
 
 import Feed from './feed/feed.module';
-import Timeline from './timeline/timeline.module';
+import ProfileInfo from './profile-info/profile-info.module';
 
-export default class PaginaInicial extends ControllerBase {
+export default class ExemploController extends ControllerBase {
   constructor() {
     super();
 
     this.modulos = [
       Feed,
-      Timeline
+      ProfileInfo
     ];
   }
 }
 
-new PaginaInicial().iniciar();
+

@@ -1,11 +1,6 @@
 const glob = require('glob');
 const path = require('path');
 
-const fontLoaderQuery = { 
-  publicPath: path.join(__dirname, '../dist/fonts'),
-  name: '[hash].[ext]'
-};
-
 const configuration = {
   cache: true,
 
@@ -31,10 +26,44 @@ const configuration = {
 
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'html-loader', exclude: /node_modules/ },
-      { test: /\.(scss|sass|css)$/, loaders: [ 'style-loader', 'css-loader', 'sass-loader' ] },
-      { test: /\.(svg|eot|ttf|otf|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'file-loader', query: fontLoaderQuery }
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      
+      {
+        test: /\.html$/, 
+        loader: 'html-loader', 
+        exclude: /node_modules/
+      },
+
+      {
+        test: /\.(scss|sass|css)$/, 
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+          ]
+      },
+
+      {
+        test: /\.(svg|eot|ttf|otf|woff(2)?)(\?[a-z0-9=&.]+)?$/, 
+        loader: 'file-loader', 
+        query: {
+          name: '/icon/[name].[ext]',
+          publicPath: path.join(__dirname, '../dist')
+        }
+      },
+
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader',
+        query: {
+          name: '/img/[name].[ext]',
+          publicPath: path.join(__dirname, '../dist')
+        }
+      },
     ]    
   }
 };

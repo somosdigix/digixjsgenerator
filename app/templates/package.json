@@ -8,7 +8,7 @@
   "main": "bootstrap.js",
   "scripts": {
     "webpack": "node node_modules/webpack/bin/webpack.js --config _config/webpack.config.js --colors --hide-modules",
-    "mocha": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js --reporter landing",
+    "mocha": "node node_modules/.bin/mocha ./dist/tests.dist.js --require ./test/helpers/setup-browser-env.js",
     "build": "npm run -s webpack || true",
     "build:watch": "npm run -s webpack -- --watch || true",
     "test": "npm run -s mocha || true",

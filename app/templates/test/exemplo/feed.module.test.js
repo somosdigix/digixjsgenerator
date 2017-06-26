@@ -15,10 +15,9 @@ describe('Feed', () => {
     _feed = new Feed(_sandbox);
   });
 
-  it('deve iniciar com o básico do seu template', () => {
-    _feed.iniciar();
-
-    expect(dom('div[data-js="feed"] section').any()).to.be.ok();
+  afterEach(() => {
+    _feed.finalizar();
+    dom('div[data-js="feed"]').remove();
   });
 
   it('deve listar as postagens', () => {
@@ -41,4 +40,6 @@ describe('Feed', () => {
     expect(dom('div[data-id="1"]').any()).to.be.ok();
     expect(dom('div[data-id="2"]').any()).to.be.ok();
   });
+
+  it('deve exibir um feedback quando não há postagens a serem exibidas');
 });

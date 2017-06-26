@@ -4,7 +4,7 @@ import template from './feed.template.html';
 export default class Feed {
   constructor(sandbox) {
     this.sandbox = sandbox;
-    this.el = this.sandbox.dom('div[data-js="feed"]');
+    this.el = sandbox.dom('div[data-js="feed"]');
 
     this.postagens = ko.observableArray([]);
   }

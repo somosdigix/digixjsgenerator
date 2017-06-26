@@ -6,6 +6,7 @@ import Widgets from '~/base-lib/widgets';
 import Mascaras from '~/base-lib/mascaras';
 import Guid from '~/base-lib/guid';
 import Redirect from '~/base-lib/redirect';
+import Seguranca from '~/base-lib/seguranca';
 
 export default class Sandbox {
   constructor() {
@@ -17,5 +18,6 @@ export default class Sandbox {
     this.mascaras = Mascaras;
     this.guid = Guid;
     this.redirect = Redirect;
+    this.seguranca = Seguranca;
   }
 }
