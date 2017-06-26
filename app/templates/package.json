@@ -12,7 +12,8 @@
     "build": "npm run -s webpack || true",
     "build:watch": "npm run -s webpack -- --watch || true",
     "test": "npm run -s mocha || true",
-    "test:watch": "npm run -s mocha -- --reporter min --watch || true"
+    "test:watch": "npm run -s mocha -- --reporter min --watch || true",
+    "build:test": "node node_modules/npm-run-all/bin/npm-run-all/index.js -c -p build:watch test:watch"
   },
   "author": "Digix",
   "license": "ISC",
@@ -30,6 +31,7 @@
     "knockout": "^3.4.2",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
     "reqwest": "^2.0.5",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.0",
